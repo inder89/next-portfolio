@@ -7,9 +7,10 @@ import styled from 'styled-components';
 const StyledLink = styled.a`
   background-color: #607d8b;
   color: white;
-  padding: 1em 1.5em;
+  padding: 1em 1em;
   text-decoration: none;
   text-transform: uppercase;
+  border-radius: 2%;
 `;
 
 Router.onRouteChangeStart = url => {
@@ -28,9 +29,15 @@ export default ({ children, title}) => (
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"/>
     </Head>
     <header>
-      <Link href="/">Home</Link>
-      <Link href="/about">About</Link>
-      <Link href="/services">Services</Link>
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+      <Link href="/about">
+        <a>About</a>
+      </Link>
+      <Link href="/services">
+        <a>Services</a>
+      </Link>
       <Link href="/shop">Shop</Link>
       <Link href="/contact">Contact</Link>
       <Link prefetch href="/appointment" passHref>  
@@ -63,13 +70,16 @@ export default ({ children, title}) => (
       header {
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
+        
+        align-items: center;
         padding: 1em;
+        margin-top: 2em;
         font-size: 1.2rem;
         background: #FFEB3B;
       }
       header a {
-        color: darkgray;
+        color: gray;
         text-decoration: none;
       }
       header a: hover {
@@ -80,13 +90,7 @@ export default ({ children, title}) => (
         padding: 1em;
       }
     `} </style>
-    <style global jsx>{`
-      body {
-        margin: 0;
-        font-size: 110%;
-        background: #f0f0f0;
-      }
-    `} </style>
+    
   </div>
 )
 

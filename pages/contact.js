@@ -1,14 +1,20 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
+import MapView from '../components/MapView';
+import MapStyled from '../components/styled/MapStyled';
 
 export default () => (
-  <Layout title="About">
+  <div>
+    <Layout title="Contact Me">
+      
+      <Link href="/" >
+        <a>Go to home</a>
+      </Link>
+      <MapStyled><MapView  /></MapStyled>
+      
+      
+    </Layout>
     
-    <Link href="/" >
-      <a>Go to home</a>
-    </Link>
-    <p>Javascript programmer</p>
-    <img src="/static/JavaScript-logo.png" alt="JavaScript" height="200px" />
-  </Layout>
+  </div>
 )
 

@@ -15,15 +15,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "@react-google-maps/api": "^1.2.3-alpha.8",
+    "google-map-react": "^1.1.4",
     "next": "^8.1.0",
     "nprogress": "^0.2.0",
+    "nuka-carousel": "^4.5.4",
     "progress": "^2.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.0"
+    "babel-plugin-styled-components": "^1.10.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0"
   }
 }

@@ -8,7 +8,7 @@ export default () => (
       <a>Make an appointment</a>
     </Link>
     
-    <img src="/static/JavaScript-logo.png" alt="JavaScript" height="200px" />
+    
   </Layout>
 )
 
