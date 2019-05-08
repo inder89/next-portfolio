@@ -1,27 +1,19 @@
-import IconStyled from './styled/IconStyled';
 import Icons from '@material-ui/core/Icon';
 import { any, string, bool } from 'prop-types';
+import IconStyled from './styled/IconStyled';
 
-const Icon = ({ name, style, type, ...restProps }) => {
-  if ( type === 'material' ) {
+const Icon = ({
+ name, style, type, ...restProps 
+}) => {
+  if (type === 'material') {
     return (
-      <IconStyled
-        {...restProps}
-        className="material-icons"
-        style={style}
-      >
+      <IconStyled {...restProps} className="material-icons" style={style}>
         face
       </IconStyled>
     );
   }
 
-  return (
-    <IconStyled
-      {...restProps}
-      className={`${name}`}
-      style={style}
-    />
-  );
+  return <IconStyled {...restProps} className={`${name}`} style={style} />;
 };
 
 Icon.propTypes = {

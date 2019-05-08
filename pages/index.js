@@ -1,13 +1,10 @@
+import React from 'react';
 import Link from 'next/link';
-import Layout from '../components/Layout';
 import Carousel from 'nuka-carousel';
+import Layout from '../components/Layout';
 
-
-const Index = () => {
-  
-  return (
+const Index = () => (
   <Layout title="Home">
-    
     <Link href="/about">
       <a>Go to about</a>
     </Link>
@@ -19,6 +16,5 @@ const Index = () => {
     </Carousel>
     <h2>Full Scope Optometric Services</h2>
   </Layout>
-  )
-}
+);
 export default Index;

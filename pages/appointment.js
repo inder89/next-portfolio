@@ -3,12 +3,8 @@ import Layout from '../components/Layout';
 
 export default () => (
   <Layout title="Make an appointment">
-    
-    <Link href="/" >
+    <Link href="/">
       <a>Make an appointment</a>
     </Link>
-    
-    
   </Layout>
-)
-
+);

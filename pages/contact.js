@@ -6,15 +6,12 @@ import MapStyled from '../components/styled/MapStyled';
 export default () => (
   <div>
     <Layout title="Contact Me">
-      
-      <Link href="/" >
+      <Link href="/">
         <a>Go to home</a>
       </Link>
-      <MapStyled><MapView  /></MapStyled>
-      
-      
+      <MapStyled>
+        <MapView />
+      </MapStyled>
     </Layout>
-    
   </div>
-)
-
+);

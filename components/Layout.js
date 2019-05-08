@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Router from 'next/router';
@@ -13,20 +14,23 @@ const StyledLink = styled.a`
   border-radius: 2%;
 `;
 
-Router.onRouteChangeStart = url => {
-  console.log(url);
-  NProgress.start(); //start the loading icon
-}
+Router.onRouteChangeStart = (url) => {
+  console.log('url');
+  NProgress.start(); // start the loading icon
+};
 
-//call the done method when route change is complete
+// call the done method when route change is complete
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-export default ({ children, title}) => (
+export default ({ children, title }) => (
   <div className="root">
     <Head>
       <title>NextPortfolio</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"/>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"
+      />
     </Head>
     <header>
       <Link href="/">
@@ -38,59 +42,67 @@ export default ({ children, title}) => (
       <Link href="/services">
         <a>Services</a>
       </Link>
-      <Link href="/shop">Shop</Link>
-      <Link href="/contact">Contact</Link>
-      <Link prefetch href="/appointment" passHref>  
+      <Link href="/shop">
+        <a>Shop</a>
+      </Link>
+      <Link href="/contact">
+        <a>Contact</a>
+      </Link>
+      <Link prefetch href="/appointment" passHref>
         <StyledLink>Make an appointment</StyledLink>
       </Link>
-
     </header>
 
     <h1>{title}</h1>
     {children}
 
-    <footer>&copy; {new Date().getFullYear()}</footer>
+    <footer>
+      &copy;
+      {new Date().getFullYear()}
+    </footer>
     <style jsx>{`
-      .root {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      html {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-      }
-      *, *:before, *:after {
-        -webkit-box-sizing: inherit;
-        -moz-box-sizing: inherit;
-        box-sizing: inherit;
+        .root {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
         }
-      header {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        
-        align-items: center;
-        padding: 1em;
-        margin-top: 2em;
-        font-size: 1.2rem;
-        background: #FFEB3B;
-      }
-      header a {
-        color: gray;
-        text-decoration: none;
-      }
-      header a: hover {
-        font-weight: bold;
-        color: lightgray;
-      }
-      footer {
-        padding: 1em;
-      }
-    `} </style>
-    
-  </div>
-)
+        html {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+        *,
+        *:before,
+        *:after {
+          -webkit-box-sizing: inherit;
+          -moz-box-sizing: inherit;
+          box-sizing: inherit;
+        }
+        header {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
 
+          align-items: center;
+          padding: 1em;
+          margin-top: 2em;
+          font-size: 1.2rem;
+          background: #00ffa2;
+        }
+        header a {
+          color: #004466;
+          text-decoration: none;
+          padding: 1rem;
+        }
+        headera: hover {
+          font-weight: bold;
+          color: lightgray;
+        }
+        footer {
+          padding: 1em;
+        }
+      `}
+    </style>
+  </div>
+);

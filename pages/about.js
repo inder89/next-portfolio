@@ -3,12 +3,10 @@ import Layout from '../components/Layout';
 
 export default () => (
   <Layout title="About">
-    
-    <Link href="/" >
+    <Link href="/">
       <a>Go to home</a>
     </Link>
     <p>Greg Luke</p>
-    <img src="/static/greg.jpg" alt="profile picture" height="200px" />
+    <img src="/static/greg.jpg" alt="this is the owner" height="200px" />
   </Layout>
-)
-
+);
