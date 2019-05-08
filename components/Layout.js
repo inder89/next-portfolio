@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -14,7 +16,7 @@ const StyledLink = styled.a`
   border-radius: 2%;
 `;
 
-Router.onRouteChangeStart = (url) => {
+Router.onRouteChangeStart = url => {
   console.log('url');
   NProgress.start(); // start the loading icon
 };
@@ -33,6 +35,7 @@ export default ({ children, title }) => (
       />
     </Head>
     <header>
+      <img src="../static/eyeman.png" alt="logo" />
       <Link href="/">
         <a>Home</a>
       </Link>
@@ -60,7 +63,8 @@ export default ({ children, title }) => (
       &copy;
       {new Date().getFullYear()}
     </footer>
-    <style jsx>{`
+    <style jsx>
+      {`
         .root {
           display: flex;
           justify-content: center;
@@ -82,22 +86,23 @@ export default ({ children, title }) => (
         header {
           width: 100%;
           display: flex;
-          justify-content: flex-end;
-
+          justify-content: flex-start;
+          flex-wrap: wrap;
           align-items: center;
           padding: 1em;
           margin-top: 2em;
           font-size: 1.2rem;
-          background: #00ffa2;
+          background: ;
         }
         header a {
           color: #004466;
           text-decoration: none;
           padding: 1rem;
+          flex-grow: 1;
         }
-        headera: hover {
+        header a:hover {
           font-weight: bold;
-          color: lightgray;
+          color: red;
         }
         footer {
           padding: 1em;
