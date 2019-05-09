@@ -9,7 +9,7 @@ import NProgress from 'nprogress';
 import styled from 'styled-components';
 
 const StyledLink = styled.a`
-  background-color: #607d8b;
+  background-color: #1d7206;
   color: white;
   padding: 1em 1em;
   text-decoration: none;
@@ -27,9 +27,9 @@ Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
 export default ({ children }) => (
-  <div className="root">
+  <div className="wrapper">
     <Head>
-      <title>NextPortfolio</title>
+      <title>Greg Luke</title>
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"
@@ -37,9 +37,19 @@ export default ({ children }) => (
     </Head>
     <header className="main-header">
       <div className="container">
-        <h1 className="logo">
-          <img src="../static/eyeman.png" alt="Eye Guy" />
-        </h1>
+        <div className="logo">
+          <img
+            className="logo_main"
+            src="../static/eyeman.png"
+            alt="Eye Guy"
+            width="93"
+            height="95"
+          />
+          <div className="logo_full">
+            <div className="logo_text">Greg Luke Optometrist</div>
+            <div className="logo_slogan">optometry</div>
+          </div>
+        </div>
         <nav className="main-nav">
           <ul className="main-nav-list">
             <Link href="/">
@@ -73,18 +83,13 @@ export default ({ children }) => (
     </footer>
     <style jsx>
       {`
-        .root {
+        .wrapper {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
         }
-        .container {
-          width: 960px;
-          max-width: 100%;
-          padding: 20px;
-          margin: 0 auto;
-        }
+
         html {
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
@@ -97,16 +102,17 @@ export default ({ children }) => (
           -moz-box-sizing: inherit;
           box-sizing: inherit;
         }
-        img {
-          max-width: 100%;
-          height: auto;
-        }
 
         .main-header .container {
           display: flex;
           align-items: center;
           justify-content: space-around;
           flex-wrap: wrap;
+          background-color: #f0f0f0;
+        }
+
+        .main-nav .logo {
+          flex: 0 0 80%;
         }
         .main-nav ul {
           margin: 1em 0 0.5em;
@@ -119,10 +125,38 @@ export default ({ children }) => (
           display: inline-block;
           padding: 0.5em 1.5em;
           text-decoration: none;
+          color: #3a0046;
+        }
+        .main-nav a:hover {
+          color: #12a115;
+        }
+        .logo {
+          display: flex;
         }
 
-        /* children styles */
+        .logo .logo_text {
+          font-family: 'Raleway', sans-serif;
+          font-size: 1.667em;
+          line-height: 1em;
+          font-weight: 600;
+        }
 
+        .logo .logo_full {
+          display: inline-block;
+          max-width: 170px;
+        }
+        .logo_slogan {
+          font-weight: 500;
+          line-height: 1em;
+          float: left;
+          text-align: left;
+          padding-left: 2px;
+          padding-top: 0.1em;
+          letter-spacing: -0.6px;
+        }
+        .{child} h2 {
+          font-size: 50px;
+        }
         footer {
           padding: 1em;
         }
