@@ -9,12 +9,13 @@ import NProgress from 'nprogress';
 import styled from 'styled-components';
 
 const StyledLink = styled.a`
-  background-color: #1d7206;
-  color: white;
+  background-color: #577ee9;
+  color: var(--white);
   padding: 1em 1em;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 2%;
+  border-radius: 8%;
+  text-align: center;
 `;
 
 Router.onRouteChangeStart = url => {
@@ -34,9 +35,26 @@ export default ({ children }) => (
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"
       />
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossOrigin="anonymous"
+      />
     </Head>
-    <header className="main-header">
-      <div className="container">
+    <div className="top">
+      <div className="hours">
+        <h5>
+          Opening hours: Mon-Wed 9:00 - 5:30 / Thurs 9:00 - 6:00 / Sat 9:00 -
+          12:00
+        </h5>
+      </div>
+
+      <div className="icon">
+        <img src="../static/facebook.png" alt="" height="80px" width="80px" />
+      </div>
+
+      <header className="main-header">
         <div className="logo">
           <img
             className="logo_main"
@@ -72,8 +90,8 @@ export default ({ children }) => (
             </Link>
           </ul>
         </nav>
-      </div>
-    </header>
+      </header>
+    </div>
 
     {children}
 
@@ -83,13 +101,6 @@ export default ({ children }) => (
     </footer>
     <style jsx>
       {`
-        .wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-        }
-
         html {
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
@@ -103,40 +114,39 @@ export default ({ children }) => (
           box-sizing: inherit;
         }
 
-        .main-header .container {
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-          flex-wrap: wrap;
-          background-color: #f0f0f0;
+        .wrapper {
+          display: grid;
+          grid-gap: 20px;
         }
-
-        .main-nav .logo {
-          flex: 0 0 80%;
+        .top {
+          display: grid;
+          grid-gap: 20px;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(auto);
+          grid-template-areas:
+            'hours hours hours icon'
+            'main-header main-header main-header main-header';
         }
-        .main-nav ul {
-          margin: 1em 0 0.5em;
-          text-align: center;
+        .hours {
+          grid-area: hours;
+          justify-self: center;
         }
-        .main-nav li {
-          display: inline;
+        .icon {
+          grid-area: icon;
+          font-size: 10px;
+          justify-self: center;
         }
-        .main-nav a {
-          display: inline-block;
-          padding: 0.5em 1.5em;
-          text-decoration: none;
-          color: #3a0046;
-        }
-        .main-nav a:hover {
-          color: #12a115;
+        .main-header {
+          grid-area: main-header;
         }
         .logo {
           display: flex;
+          justify-content: center;
+          align-items: center;
         }
-
         .logo .logo_text {
           font-family: 'Raleway', sans-serif;
-          font-size: 1.667em;
+          font-size: 1.267em;
           line-height: 1em;
           font-weight: 600;
         }
@@ -154,9 +164,32 @@ export default ({ children }) => (
           padding-top: 0.1em;
           letter-spacing: -0.6px;
         }
-        .{child} h2 {
-          font-size: 50px;
+
+        .main-nav ul {
+          display: grid;
+          padding: 0;
+          margin: 20px 0;
+          list-style-type: none;
+          grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+          grid-gap: 20px;
         }
+
+        .main-nav a {
+          display: block;
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 20px;
+          text-align: center;
+          color: #212b02;
+          font-size: 20px;
+          border-radius: 8%;
+        }
+        .main-nav a:hover {
+          background-color: #577ee9;
+          padding: 1em 1em;
+          color: var(--white);
+        }
+
         footer {
           padding: 1em;
         }
