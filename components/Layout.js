@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import React from 'react';
@@ -25,7 +26,7 @@ Router.onRouteChangeStart = url => {
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-export default ({ children, title }) => (
+export default ({ children }) => (
   <div className="root">
     <Head>
       <title>NextPortfolio</title>
@@ -34,29 +35,36 @@ export default ({ children, title }) => (
         href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"
       />
     </Head>
-    <header>
-      <img src="../static/eyeman.png" alt="logo" />
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-      <Link href="/services">
-        <a>Services</a>
-      </Link>
-      <Link href="/shop">
-        <a>Shop</a>
-      </Link>
-      <Link href="/contact">
-        <a>Contact</a>
-      </Link>
-      <Link prefetch href="/appointment" passHref>
-        <StyledLink>Make an appointment</StyledLink>
-      </Link>
+    <header className="main-header">
+      <div className="container">
+        <h1 className="logo">
+          <img src="../static/eyeman.png" alt="Eye Guy" />
+        </h1>
+        <nav className="main-nav">
+          <ul className="main-nav-list">
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+            <Link href="/services">
+              <a>Services</a>
+            </Link>
+            <Link href="/shop">
+              <a>Shop</a>
+            </Link>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+            <Link prefetch href="/appointment" passHref>
+              <StyledLink>Make an appointment</StyledLink>
+            </Link>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <h1>{title}</h1>
     {children}
 
     <footer>
@@ -71,6 +79,12 @@ export default ({ children, title }) => (
           align-items: center;
           flex-direction: column;
         }
+        .container {
+          width: 960px;
+          max-width: 100%;
+          padding: 20px;
+          margin: 0 auto;
+        }
         html {
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
@@ -83,29 +97,40 @@ export default ({ children, title }) => (
           -moz-box-sizing: inherit;
           box-sizing: inherit;
         }
-        header {
-          width: 100%;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .main-header .container {
           display: flex;
-          justify-content: flex-start;
-          flex-wrap: wrap;
           align-items: center;
-          padding: 1em;
-          margin-top: 2em;
-          font-size: 1.2rem;
-          background: ;
+          justify-content: space-around;
+          flex-wrap: wrap;
         }
-        header a {
-          color: #004466;
+        .main-nav ul {
+          margin: 1em 0 0.5em;
+          text-align: center;
+        }
+        .main-nav li {
+          display: inline;
+        }
+        .main-nav a {
+          display: inline-block;
+          padding: 0.5em 1.5em;
           text-decoration: none;
-          padding: 1rem;
-          flex-grow: 1;
         }
-        header a:hover {
-          font-weight: bold;
-          color: red;
-        }
+
+        /* children styles */
+
         footer {
           padding: 1em;
+        }
+
+        @media (min-width: 960px) {
+          .main-header .container {
+            justify-content: space-between;
+          }
         }
       `}
     </style>
