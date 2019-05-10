@@ -14,8 +14,8 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
-        <Carousel
-          autoplay={false} /*  TODO change it to true later */
+        {/* <Carousel
+          autoplay={false} 
           wrapAround={true}
           animation="zoom"
           zoomScale={0.2}
@@ -24,8 +24,8 @@ export default class Index extends React.Component {
           cellSpacing={20}
           dragging={true}
           style={{ width: 1268 }}
-        >
-          <div className="image">
+        > */}
+        {/* <div className="image">
             <img src="../static/slide0.jpg" alt="slideshow" />
           </div>
 
@@ -35,7 +35,7 @@ export default class Index extends React.Component {
           <div className="image">
             <img src="../static/slide2.jpg" alt="slideshow" />
           </div>
-        </Carousel>
+        </Carousel> */}
         <section className="content">
           <h2 className="title">Full Scope Optometric Services</h2>
           <p className="inner_content">
@@ -85,11 +85,6 @@ export default class Index extends React.Component {
         </section>
         {/* // TODO Details button component */}
         <div className="mission">
-          <img
-            className="cover"
-            src="../static/pexels-photo.jpg"
-            alt="laughing girl"
-          />
           <p className="inner_content">
             <span className="highlight">Our Mission –</span> <br />
             Medioptics is a family-friendly optometry practice based in Toormina
@@ -104,6 +99,34 @@ export default class Index extends React.Component {
           <h3>Reordering Contact lenses?</h3>
           <a href="">Contact Us</a>
         </div>
+
+        <section className="features">
+          <div className="feature">
+            <span className="icon">
+              <i className="fas fa-book-open" />
+            </span>
+            <a href="">Opening hours</a>
+            <p>
+              Opening hours: Mon-Wed 9:00 - 5:30 / Thurs 9:00 - 6:00 / Sat 9:00
+              - 12:00
+            </p>
+          </div>
+          <div className="feature">
+            <span className="icon">
+              <i className="fa fa-eye" aria-hidden="true" />
+            </span>
+            <a href="">Immediate Spec Service</a>
+            <p>
+              You will usually get single vision on the same day and bifocals or
+              multi focal within 24-48 hours.
+            </p>
+          </div>
+          <div className="feature">
+            <img src="https://img.icons8.com/ios/50/000000/goggles-filled.png" />
+            <a href="">Optometrist Greg Luke</a>
+            <p>Meet our doctors</p>
+          </div>
+        </section>
         <style jsx>
           {`
             .content {
@@ -145,18 +168,31 @@ export default class Index extends React.Component {
               max-height: 90%;
               margin: 20px auto;
             }
-            .highlight {
-              font-size: 60px;
-            }
+
             .mission {
               position: relative;
+              width: 100%;
+              height: 100vh;
+              background-image: url('../static/pexels-photo.jpg');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
             }
+            .mission .highlight {
+              font-size: 200%;
+              margin: 1rem 0;
+              display: block;
+            }
+            /* // TODO hide text at 860 breakpoint  */
             .mission .inner_content {
               position: absolute;
-              top: 100px;
+              padding: 0 20px;
+              bottom: 10%;
               left: 0;
-              width: 50%;
+              line-height: 200%;
+              width: 60%;
               color: white;
+              font-size: 130%;
             }
             .call_to_action {
               display: flex;
@@ -176,9 +212,6 @@ export default class Index extends React.Component {
               background-color: white;
               padding: 1em 1em;
               color: var(--white);
-            }
-            .slider-slide > img {
-              width: auto;
             }
           `}
         </style>

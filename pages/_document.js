@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
             href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto"
+            href="https://fonts.googleapis.com/css?family=Catamaran:400,700,900"
             rel="stylesheet"
           />
         </Head>
@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
           <style global jsx>
             {`
               body {
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Catamaran', sans-serif;
                 background-color: var(--white);
                 --green: #86c232;
                 --dark: #222629;

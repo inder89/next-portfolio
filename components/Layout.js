@@ -55,21 +55,23 @@ export default ({ children }) => (
       </div>
 
       <header className="main-header">
-        <div className="logo">
-          <img
-            className="logo_main"
-            src="../static/eyeman.png"
-            alt="Eye Guy"
-            width="93"
-            height="95"
-          />
-          <div className="logo_full">
-            <div className="logo_text">Greg Luke Optometrist</div>
-            <div className="logo_slogan">optometry</div>
-          </div>
-        </div>
         <nav className="main-nav">
           <ul className="main-nav-list">
+            <Link href="/">
+              <a>
+                <img
+                  className="logo_main"
+                  src="../static/eyeman.png"
+                  alt="Eye Guy"
+                  width="93"
+                  height="95"
+                />
+              </a>
+              {/*  <div className="logo_full">
+                <div className="logo_text">Greg Luke Optometrist</div>
+                <div className="logo_slogan">optometry</div>
+              </div> */}
+            </Link>
             <Link href="/">
               <a>Home</a>
             </Link>
@@ -105,6 +107,8 @@ export default ({ children }) => (
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
+
+          font-size: calc(16px + 3vw);
         }
         *,
         *:before,
@@ -112,6 +116,9 @@ export default ({ children }) => (
           -webkit-box-sizing: inherit;
           -moz-box-sizing: inherit;
           box-sizing: inherit;
+        }
+        * {
+          text-decoration: none;
         }
 
         .wrapper {
@@ -130,10 +137,11 @@ export default ({ children }) => (
         .hours {
           grid-area: hours;
           justify-self: center;
+          font-size: 1.5rem;
         }
         .icon {
           grid-area: icon;
-          font-size: 10px;
+          font-size: 1rem;
           justify-self: center;
         }
         .main-header {
@@ -145,7 +153,7 @@ export default ({ children }) => (
           align-items: center;
         }
         .logo .logo_text {
-          font-family: 'Raleway', sans-serif;
+          font-family: 'Roboto', sans-serif;
           font-size: 1.267em;
           line-height: 1em;
           font-weight: 600;
@@ -176,7 +184,7 @@ export default ({ children }) => (
 
         .main-nav a {
           display: block;
-          text-decoration: none;
+          margin: 0 auto;
           text-transform: uppercase;
           padding: 20px;
           text-align: center;
