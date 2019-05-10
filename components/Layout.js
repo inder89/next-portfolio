@@ -9,13 +9,14 @@ import NProgress from 'nprogress';
 import styled from 'styled-components';
 
 const StyledLink = styled.a`
-  background-color: #577ee9;
-  color: var(--white);
-  padding: 1em 1em;
+  color: #f1fe4b;
+  padding: 0.6em 1em;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 8%;
   text-align: center;
+  background-color: #4b7447;
+  color: #fff;
 `;
 
 Router.onRouteChangeStart = url => {
@@ -51,14 +52,14 @@ export default ({ children }) => (
       </div>
 
       <div className="icon">
-        <img src="../static/facebook.png" alt="" height="80px" width="80px" />
+        <img src="../static/facebook.png" alt="" height="40px" width="40px" />
       </div>
 
       <header className="main-header">
         <nav className="main-nav">
           <ul className="main-nav-list">
             <Link href="/">
-              <a>
+              <a id="logo">
                 <img
                   className="logo_main"
                   src="../static/eyeman.png"
@@ -67,11 +68,11 @@ export default ({ children }) => (
                   height="95"
                 />
               </a>
-              {/*  <div className="logo_full">
-                <div className="logo_text">Greg Luke Optometrist</div>
-                <div className="logo_slogan">optometry</div>
-              </div> */}
             </Link>
+            <div className="logo_full">
+              <div className="logo_text">Greg Luke Optometrist</div>
+              <div className="logo_slogan">optometry</div>
+            </div>
             <Link href="/">
               <a>Home</a>
             </Link>
@@ -119,6 +120,7 @@ export default ({ children }) => (
         }
         * {
           text-decoration: none;
+          list-style-type: none;
         }
 
         .wrapper {
@@ -127,9 +129,9 @@ export default ({ children }) => (
         }
         .top {
           display: grid;
-          grid-gap: 20px;
+
           grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: repeat(auto);
+          grid-template-rows: 80px 80px auto;
           grid-template-areas:
             'hours hours hours icon'
             'main-header main-header main-header main-header';
@@ -147,21 +149,21 @@ export default ({ children }) => (
         .main-header {
           grid-area: main-header;
         }
-        .logo {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+
+        #logo:hover {
+          background: none;
         }
-        .logo .logo_text {
+        .logo_text {
           font-family: 'Roboto', sans-serif;
           font-size: 1.267em;
           line-height: 1em;
           font-weight: 600;
         }
 
-        .logo .logo_full {
+        .logo_full {
           display: inline-block;
           max-width: 170px;
+          padding-top: 15px;
         }
         .logo_slogan {
           font-weight: 500;
@@ -173,13 +175,17 @@ export default ({ children }) => (
           letter-spacing: -0.6px;
         }
 
-        .main-nav ul {
+        .main-nav-list {
+          grid-area: main-header;
           display: grid;
           padding: 0;
-          margin: 20px 0;
+          margin: 0 auto;
+
           list-style-type: none;
-          grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
           grid-gap: 20px;
+
+          align-items: self-start;
         }
 
         .main-nav a {
@@ -193,9 +199,14 @@ export default ({ children }) => (
           border-radius: 8%;
         }
         .main-nav a:hover {
-          background-color: #577ee9;
-          padding: 1em 1em;
-          color: var(--white);
+          background-color: #fff;
+          padding: 0.5em 0.7em;
+
+          color: #121111;
+          border: 3px solid #4b7447;
+        }
+        .main-nav > ul:lastchild > a:hover {
+          border: 3px solid #4b7447;
         }
 
         footer {
@@ -205,6 +216,14 @@ export default ({ children }) => (
         @media (min-width: 960px) {
           .main-header .container {
             justify-content: space-between;
+          }
+        }
+
+        @media (min-height: 500px) {
+          .main-header {
+            position: sticky;
+            top: 0;
+            /*other styles*/
           }
         }
       `}

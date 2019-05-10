@@ -15,7 +15,7 @@ export default class Index extends React.Component {
     return (
       <Layout>
         {/* <Carousel
-          autoplay={false} 
+          autoplay={false}
           wrapAround={true}
           animation="zoom"
           zoomScale={0.2}
@@ -23,9 +23,9 @@ export default class Index extends React.Component {
           speed={900}
           cellSpacing={20}
           dragging={true}
-          style={{ width: 1268 }}
-        > */}
-        {/* <div className="image">
+          style={{ width: 1468 }}
+        >
+          <div className="image">
             <img src="../static/slide0.jpg" alt="slideshow" />
           </div>
 
@@ -150,12 +150,17 @@ export default class Index extends React.Component {
             }
 
             .feature {
-              background: #6bc3aa;
+              background: #fff;
 
               padding: 10px;
               border: 2px solid black;
               text-align: center;
               box-shadow: 0 0 4px rgba(0, 0, 0, 1);
+            }
+            .feature:hover {
+              background: #f5be41;
+              border: none;
+              box-shadow: 0 0 0 rgba(0, 0, 0, 1);
             }
             .feature .icon {
               font-size: 50px;
@@ -177,6 +182,7 @@ export default class Index extends React.Component {
               background-repeat: no-repeat;
               background-position: center;
               background-size: cover;
+              text-shadow: 2px 2px 8px #111;
             }
             .mission .highlight {
               font-size: 200%;
@@ -211,7 +217,7 @@ export default class Index extends React.Component {
             .call_to_action a:hover {
               background-color: white;
               padding: 1em 1em;
-              color: var(--white);
+              color: #e6f487;
             }
           `}
         </style>

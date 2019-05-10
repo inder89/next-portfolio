@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
                 --greenish: #379683;
                 --puregreen: #5cdb95;
                 --lightgreen: #8ee4af;
-                --white: #edf5e1;
+                --white: #fff;
               }
             `}
           </style>
