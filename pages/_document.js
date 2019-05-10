@@ -28,6 +28,16 @@ export default class MyDocument extends Document {
             {`
               body {
                 font-family: 'Roboto', sans-serif;
+                background-color: var(--white);
+                --green: #86c232;
+                --dark: #222629;
+                --gray: #474b4f;
+                --slate: #6b6e60;
+                --blue: #05386b;
+                --greenish: #379683;
+                --puregreen: #5cdb95;
+                --lightgreen: #8ee4af;
+                --white: #edf5e1;
               }
             `}
           </style>

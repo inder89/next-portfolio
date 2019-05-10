@@ -1,9 +1,7 @@
 import Layout from '../components/Layout';
 
-const Services = () => (
-  <Layout title="Services">
+export default () => (
+  <Layout>
     <p>You can hire me at </p>
   </Layout>
 );
-
-export default Services;
