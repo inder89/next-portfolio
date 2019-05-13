@@ -15,15 +15,15 @@ export default class Index extends React.Component {
     return (
       <Layout>
         {/* <Carousel
-          autoplay={false}
+          autoplay={true}
           wrapAround={true}
-          animation="zoom"
+          // animation="zoom"
           zoomScale={0.2}
           withoutControls={false}
           speed={900}
           cellSpacing={20}
           dragging={true}
-          style={{ width: 1468 }}
+          style={{ width: 1330 }}
         >
           <div className="image">
             <img src="../static/slide0.jpg" alt="slideshow" />
@@ -97,7 +97,9 @@ export default class Index extends React.Component {
         </div>
         <div className="call_to_action">
           <h3>Reordering Contact lenses?</h3>
-          <a href="">Contact Us</a>
+          <a className="button" href="">
+            Contact Us
+          </a>
         </div>
 
         <section className="features">
@@ -126,6 +128,18 @@ export default class Index extends React.Component {
             <a href="">Optometrist Greg Luke</a>
             <p>Meet our doctors</p>
           </div>
+        </section>
+
+        <section className="showcase">
+          <div className="aside">
+            <h3 className="highlight">
+              Range of Sunglasses <br />
+              Online!
+            </h3>
+            <div>We offer free delivery to your door!</div>
+            <a href="">Click Here Now</a>
+          </div>
+          <img src="../static/home1_bg2.jpg" alt="woman and a man" />
         </section>
         <style jsx>
           {`
@@ -157,10 +171,12 @@ export default class Index extends React.Component {
               text-align: center;
               box-shadow: 0 0 4px rgba(0, 0, 0, 1);
             }
+
             .feature:hover {
-              background: #f5be41;
+              background: #2a7c1c;
               border: none;
               box-shadow: 0 0 0 rgba(0, 0, 0, 1);
+              color: #fff;
             }
             .feature .icon {
               font-size: 50px;
@@ -184,7 +200,7 @@ export default class Index extends React.Component {
               background-size: cover;
               text-shadow: 2px 2px 8px #111;
             }
-            .mission .highlight {
+            .highlight {
               font-size: 200%;
               margin: 1rem 0;
               display: block;
@@ -203,21 +219,54 @@ export default class Index extends React.Component {
             .call_to_action {
               display: flex;
               justify-content: space-around;
-              background: #6bc3aa;
+              background: #2a7c1c;
               border: 2px solid black;
+              color: #fff;
             }
+
             .call_to_action a {
               text-decoration: none;
               text-transform: uppercase;
               padding: 20px;
               text-align: center;
-              color: #212b02;
+              color: #fff;
               font-size: 20px;
             }
             .call_to_action a:hover {
               background-color: white;
               padding: 1em 1em;
-              color: #e6f487;
+              color: #000;
+              border-radius: 8%;
+            }
+            .showcase {
+              display: grid;
+              grid-template-columns: 50% auto;
+            }
+            .showcase .aside {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              align-items: center;
+              padding: 20px;
+            }
+            .showcase .aside a {
+              padding: 20px;
+              text-decoration: none;
+              text-transform: uppercase;
+              border-radius: 8%;
+              text-align: center;
+              background-color: #4b7447;
+              color: #fff;
+              font-size: 2vw;
+            }
+            .showcase .aside a:hover {
+              padding: 0.5em 0.7em;
+              background-color: #fff;
+              border: 3px solid #4b7447;
+              color: #121111;
+            }
+            .showcase img {
+              width: 100%;
             }
           `}
         </style>

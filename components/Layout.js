@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
@@ -9,14 +10,20 @@ import NProgress from 'nprogress';
 import styled from 'styled-components';
 
 const StyledLink = styled.a`
-  color: #f1fe4b;
-  padding: 0.6em 1em;
+  padding: 0.3rem 0.3rem;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 8%;
   text-align: center;
   background-color: #4b7447;
   color: #fff;
+  font-size: 1.2vw;
+  &:hover {
+    padding: 0.5em 0.7em;
+    background-color: #fff;
+    border: 3px solid #4b7447;
+    color: #121111;
+  }
 `;
 
 Router.onRouteChangeStart = url => {
@@ -57,6 +64,10 @@ export default ({ children }) => (
 
       <header className="main-header">
         <nav className="main-nav">
+          <button aria-expanded="false" aria-controls="menu-list">
+            <span className="open">☰</span>
+            <span className="close">×</span>
+          </button>
           <ul className="main-nav-list">
             <Link href="/">
               <a id="logo">
@@ -125,7 +136,7 @@ export default ({ children }) => (
 
         .wrapper {
           display: grid;
-          grid-gap: 20px;
+          grid-gap: 60px;
         }
         .top {
           display: grid;
@@ -183,9 +194,12 @@ export default ({ children }) => (
 
           list-style-type: none;
           grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
-          grid-gap: 20px;
+          grid-gap: 1.5vw;
 
           align-items: self-start;
+        }
+        [aria-controls='menu-list'] {
+          display: none;
         }
 
         .main-nav a {
@@ -203,9 +217,6 @@ export default ({ children }) => (
           padding: 0.5em 0.7em;
 
           color: #121111;
-          border: 3px solid #4b7447;
-        }
-        .main-nav > ul:lastchild > a:hover {
           border: 3px solid #4b7447;
         }
 

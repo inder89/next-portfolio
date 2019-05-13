@@ -20,6 +20,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Catamaran:400,700,900"
             rel="stylesheet"
           />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="../stylesheets/style.css"
+          />
         </Head>
         <body>
           <Main />
@@ -27,7 +32,7 @@ export default class MyDocument extends Document {
           <style global jsx>
             {`
               body {
-                font-family: 'Catamaran', sans-serif;
+                font-family: 'leo-sans', sans-serif;
                 background-color: var(--white);
                 --green: #86c232;
                 --dark: #222629;

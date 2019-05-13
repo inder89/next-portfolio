@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'leo-sans';
+  src: url('/assets/fonts/LeoSansPro-Black.otf') format('otf');
+  src: url('../assets/fonts') format('embedded-opentype'),
+    url('../assets/fonts/') format('woff2'),
+    url('../assets/fonts/') format('woff'),
+    url('../assets/fonts/leosanspro.ttf') format('truetype'),
+    url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
