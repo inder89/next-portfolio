@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
 
-const flexCarousel = props => {
+const FlexCarousel = props => {
   const { className } = props;
 
   return (
@@ -9,4 +9,4 @@ const flexCarousel = props => {
   ); /* * TODO change it to return an expression instead */
 };
 
-export default flexCarousel;
+export default FlexCarousel;
