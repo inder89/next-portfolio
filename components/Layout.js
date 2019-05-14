@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */

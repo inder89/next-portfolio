@@ -1,3 +1,5 @@
+import ContactCard from './ContactCard';
+
 export default () => (
   <div id="wrapper">
     <form name="contact" id="contact-form" method="post" action="#">
@@ -48,12 +50,15 @@ export default () => (
       <a href="">Submit</a>
     </form>
 
-    <section className="right-side">{/* <ContactInfo /> */}</section>
+    <section className="right-side">
+      <ContactCard />
+    </section>
     <style jsx>
       {`
         #wrapper {
           display: grid;
-          grid-template-columns: 2fr 1fr;
+          grid-template-columns: 1.5fr 1fr;
+          grid-column-gap: 7.5rem;
           justify-items: flex-end;
           align-content: unset;
           align-items: center;
@@ -63,11 +68,14 @@ export default () => (
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          height: 80%;
-          width: 50%;
+
+          width: 60%;
+        }
+        #contact-form h1 {
+          margin-top: 0px;
         }
         #contact-form a {
-          padding: 0.7em;
+          padding: 0.5em;
           text-decoration: none;
           text-transform: uppercase;
           border-radius: 8%;
@@ -94,7 +102,7 @@ export default () => (
           margin-bottom: 20px;
           font-size: 1.25em;
           padding: 11px 25px 0 0;
-
+          border: 1px solid black;
           width: 70%;
           color: #000;
 
@@ -113,6 +121,7 @@ export default () => (
         }
         .txtinput:focus {
           color: #333;
+          border-color: rgba(41, 92, 161, 0.4);
 
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset,
             0 0 8px rgba(41, 92, 161, 0.6);
@@ -124,9 +133,7 @@ export default () => (
         }
 
         #contact-form textarea {
-          border-style: solid;
-          border-width: 1px;
-          border-color: #dedede;
+          border: 1px solid black;
           margin-bottom: 15px;
           font-size: 1.5em;
 
@@ -158,6 +165,19 @@ export default () => (
           -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset,
             0 0 8px rgba(40, 90, 160, 0.6);
           outline: 0 none;
+        }
+
+        .right-side {
+          justify-self: first baseline;
+          align-self: baseline;
+          height: 80%;
+          padding-top: 80px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          height: 80%;
+          width: 80%;
+          align-content: space-evenly;
         }
       `}
     </style>

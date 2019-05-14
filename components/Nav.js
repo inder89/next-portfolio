@@ -1,6 +1,8 @@
+/* eslint-disable react/button-has-type */
 import Link from 'next/link';
 import Head from 'next/head';
 import styled from 'styled-components';
+import Logo from './Logo';
 
 const StyledLink = styled.a`
   padding: 0.3rem 0.3rem;
@@ -54,20 +56,8 @@ export default () => (
           </button>
           <ul className="main-nav-list">
             <Link href="/">
-              <a id="logo">
-                <img
-                  className="logo_main"
-                  src="../static/eyeman.png"
-                  alt="Eye Guy"
-                  width="93"
-                  height="95"
-                />
-              </a>
+              <Logo />
             </Link>
-            <div className="logo_full">
-              <div className="logo_text">Greg Luke Optometrist</div>
-              <div className="logo_slogan">optometry</div>
-            </div>
             <Link href="/">
               <a>Home</a>
             </Link>
@@ -77,13 +67,13 @@ export default () => (
             <Link href="/services">
               <a>Services</a>
             </Link>
-            <Link href="/shop">
+            <Link href="/">
               <a>Shop</a>
             </Link>
             <Link href="/contact">
               <a>Contact</a>
             </Link>
-            <Link prefetch href="/appointment" passHref>
+            <Link prefetch href="/contact" passHref>
               <StyledLink>Make an appointment</StyledLink>
             </Link>
           </ul>
@@ -118,31 +108,6 @@ export default () => (
             grid-area: main-header;
           }
 
-          #logo:hover {
-            background: none;
-          }
-          .logo_text {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.267em;
-            line-height: 1em;
-            font-weight: 600;
-          }
-
-          .logo_full {
-            display: inline-block;
-            max-width: 170px;
-            padding-top: 15px;
-          }
-          .logo_slogan {
-            font-weight: 500;
-            line-height: 1em;
-            float: left;
-            text-align: left;
-            padding-left: 2px;
-            padding-top: 0.1em;
-            letter-spacing: -0.6px;
-          }
-
           .main-nav-list {
             grid-area: main-header;
             display: grid;
@@ -163,7 +128,7 @@ export default () => (
             display: block;
             margin: 0 auto;
             text-transform: uppercase;
-            padding: 20px;
+
             text-align: center;
             color: #212b02;
             font-size: 20px;
