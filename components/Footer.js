@@ -68,9 +68,12 @@ export default () => (
           display: flex;
           flex-direction: column;
           margin: 0;
+          justify-content: space-around;
+          height: 12rem;
         }
         .footer-nav-list a {
           text-decoration: none;
+          color: black;
         }
         p {
           padding-bottom: 2rem;
