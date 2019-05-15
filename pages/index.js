@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-boolean-value */
 import React from 'react';
 import Carousel from 'nuka-carousel';
-
+import MapView from '../components/MapView';
 import Layout from '../components/Layout';
 
 export default class Index extends React.Component {
@@ -133,7 +133,8 @@ export default class Index extends React.Component {
         <section className="showcase">
           <div className="aside">
             <h3 className="highlight">
-              Range of Sunglasses <br />
+              Range of Sunglasses
+              <br />
               Online!
             </h3>
             <div>We offer free delivery to your door!</div>
@@ -141,6 +142,15 @@ export default class Index extends React.Component {
           </div>
           <img src="../static/home1_bg2.jpg" alt="woman and a man" />
         </section>
+        <section className="gallery">
+          <h2 id="heading" className="highlight">Glasses Gallery</h2>
+          <img id="image1" src="../static/AdobeStock_144856281.jpeg" alt="sunglasses" />
+          <img id="image2" src="../static/profile-of-woman-wearing-glasses-PMVRYJH.jpg" alt="woman wearing glasses" />
+          <img id="image3" src="../static/spectacles.jpg" alt="spectacles" />
+          <img id="image4" src="../static/AdobeStock_41201210.jpeg" alt="woman and lens" />
+          <a id="button" href="#">Visit Our Gallery</a>
+        </section>
+        <MapView height="25em" />
         <style jsx>
           {`
             .content {
@@ -267,6 +277,65 @@ export default class Index extends React.Component {
             }
             .showcase img {
               width: 100%;
+            } 
+
+            .gallery {
+              display: grid;
+              grid-template-columns: 40% 20% 40%;
+              justify-items: center;
+              grid-template-rows: 20% 30% 30% 20%;
+              height: 40em;
+              align-items: center;
+              grid-template-areas:
+              'heading heading heading'
+              'image1 image2 image4'
+              'image1 image3 image4'
+              'button button button';
+              
+            }
+            #heading {
+              grid-area: heading;
+            }
+            #image1 {
+              grid-area: image1;
+              height: 28vw;
+            }
+            #image2 {
+              grid-area: image2;
+              height: 14vw;
+            }
+            #image3 {
+              grid-area: image3;
+              height: 14vw;
+            }
+            #image4 {
+              grid-area: image4;
+              height: 28vw;
+            }
+            #button {
+              grid-area: button;
+              padding: 1rem 1rem;
+              text-decoration: none;
+              text-transform: uppercase;
+              border-radius: 8%;
+              
+              text-align: center;
+              background-color: #4b7447;
+              color: #fff;
+              font-size: 1.2vw;
+              
+              }
+              #button:hover {
+
+                padding: 0.7em 0.7em;
+                background-color: #fff;
+                border: 3px solid #4b7447;
+                color: #121111;
+              
+            }
+            .gallery img {
+              width: 100%;
+              height: auto;
             }
           `}
         </style>

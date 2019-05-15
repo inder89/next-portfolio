@@ -59,14 +59,22 @@ export default () => (
               <Logo />
             </Link>
             <Link href="/">
-              <a>Home</a>
+                <a>Home</a>
+                
             </Link>
             <Link href="/about">
               <a>About</a>
             </Link>
-            <Link href="/services">
-              <a>Services</a>
-            </Link>
+            <li>
+                
+                <a>Services</a>
+                 <ul className="dropdown">
+                    <Link href="/services"><a>Our Services</a></Link>
+                    <Link href="/"><a>Products</a></Link>
+                    
+                </ul>   
+
+            </li>
             <Link href="/">
               <a>Shop</a>
             </Link>
@@ -120,6 +128,45 @@ export default () => (
 
             align-items: self-start;
           }
+            li {
+                color: #fff;
+                float: left;
+                padding-bottom: 1em;
+                position: relative;
+                text-decoration: none;
+                transition-duration: 0.5s;
+            }
+  
+            }
+            li:hover {
+                cursor: pointer;
+            }
+            .main-nav-list li ul {
+              visibility: hidden;
+              opacity: 0;
+              position: absolute;
+              transition: all 0.5s ease;
+              margin-top: 1rem;
+              left: 0;
+              display: none;
+            }
+            .main-nav-list li:hover > ul,
+            .main-nav-list li ul:hover {
+              visibility: visible;
+              opacity: 1;
+              display: block;
+            }
+            .dropdown a:hover {
+                padding: 0.2em 0;
+                font-size: 100%;
+                margin: 0 auto;
+            }
+
+            .main-nav-list li ul li {
+              clear: both;
+              width: 100%;
+            }
+
           [aria-controls='menu-list'] {
             display: none;
           }
