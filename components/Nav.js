@@ -59,21 +59,21 @@ export default () => (
               <Logo />
             </Link>
             <Link href="/">
-                <a>Home</a>
-                
+              <a>Home</a>
             </Link>
             <Link href="/about">
               <a>About</a>
             </Link>
             <li>
-                
-                <a>Services</a>
-                 <ul className="dropdown">
-                    <Link href="/services"><a>Our Services</a></Link>
-                    <Link href="/"><a>Products</a></Link>
-                    
-                </ul>   
-
+              <a>Services</a>
+              <ul className="dropdown">
+                <Link href="/services">
+                  <a>Our Services</a>
+                </Link>
+                <Link href="/products">
+                  <a>Products</a>
+                </Link>
+              </ul>
             </li>
             <Link href="/">
               <a>Shop</a>
@@ -157,9 +157,9 @@ export default () => (
               display: block;
             }
             .dropdown a:hover {
-                padding: 0.2em 0;
+                padding: 0.4em 0;
                 font-size: 100%;
-                margin: 0 auto;
+                margin: 0.2em 0;
             }
 
             .main-nav-list li ul li {
@@ -178,7 +178,7 @@ export default () => (
 
             text-align: center;
             color: #212b02;
-            font-size: 20px;
+            font-size: 1.2em;
             border-radius: 8%;
           }
           .main-nav a:hover {

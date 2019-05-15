@@ -14,7 +14,7 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
-        {/* <Carousel
+        <Carousel
           autoplay={true}
           wrapAround={true}
           // animation="zoom"
@@ -35,7 +35,7 @@ export default class Index extends React.Component {
           <div className="image">
             <img src="../static/slide2.jpg" alt="slideshow" />
           </div>
-        </Carousel> */}
+        </Carousel>
         <section className="content">
           <h2 className="title">Full Scope Optometric Services</h2>
           <p className="inner_content">
@@ -143,12 +143,28 @@ export default class Index extends React.Component {
           <img src="../static/home1_bg2.jpg" alt="woman and a man" />
         </section>
         <section className="gallery">
-          <h2 id="heading" className="highlight">Glasses Gallery</h2>
-          <img id="image1" src="../static/AdobeStock_144856281.jpeg" alt="sunglasses" />
-          <img id="image2" src="../static/profile-of-woman-wearing-glasses-PMVRYJH.jpg" alt="woman wearing glasses" />
+          <h2 id="heading" className="highlight">
+            Glasses Gallery
+          </h2>
+          <img
+            id="image1"
+            src="../static/AdobeStock_144856281.jpeg"
+            alt="sunglasses"
+          />
+          <img
+            id="image2"
+            src="../static/profile-of-woman-wearing-glasses-PMVRYJH.jpg"
+            alt="woman wearing glasses"
+          />
           <img id="image3" src="../static/spectacles.jpg" alt="spectacles" />
-          <img id="image4" src="../static/AdobeStock_41201210.jpeg" alt="woman and lens" />
-          <a id="button" href="#">Visit Our Gallery</a>
+          <img
+            id="image4"
+            src="../static/AdobeStock_41201210.jpeg"
+            alt="woman and lens"
+          />
+          <a id="button" href="#">
+            Visit Our Gallery
+          </a>
         </section>
         <MapView height="25em" />
         <style jsx>
@@ -267,7 +283,7 @@ export default class Index extends React.Component {
               text-align: center;
               background-color: #4b7447;
               color: #fff;
-              font-size: 2vw;
+              font-size: 1.5vw;
             }
             .showcase .aside a:hover {
               padding: 0.5em 0.7em;
@@ -277,7 +293,7 @@ export default class Index extends React.Component {
             }
             .showcase img {
               width: 100%;
-            } 
+            }
 
             .gallery {
               display: grid;
@@ -287,11 +303,10 @@ export default class Index extends React.Component {
               height: 40em;
               align-items: center;
               grid-template-areas:
-              'heading heading heading'
-              'image1 image2 image4'
-              'image1 image3 image4'
-              'button button button';
-              
+                'heading heading heading'
+                'image1 image2 image4'
+                'image1 image3 image4'
+                'button button button';
             }
             #heading {
               grid-area: heading;
@@ -318,20 +333,17 @@ export default class Index extends React.Component {
               text-decoration: none;
               text-transform: uppercase;
               border-radius: 8%;
-              
+
               text-align: center;
               background-color: #4b7447;
               color: #fff;
               font-size: 1.2vw;
-              
-              }
-              #button:hover {
-
-                padding: 0.7em 0.7em;
-                background-color: #fff;
-                border: 3px solid #4b7447;
-                color: #121111;
-              
+            }
+            #button:hover {
+              padding: 0.7em 0.7em;
+              background-color: #fff;
+              border: 3px solid #4b7447;
+              color: #121111;
             }
             .gallery img {
               width: 100%;

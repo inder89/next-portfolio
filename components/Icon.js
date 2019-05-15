@@ -1,13 +1,20 @@
-import Icons from '@material-ui/core/Icon';
-import { any, string, bool } from 'prop-types';
+import { any, string } from 'prop-types';
 import IconStyled from './styled/IconStyled';
 
-const Icon = ({ name, style, type, ...restProps }) => {
+const Icon = ({
+  name = 'fa fa-map-marker',
+  style = {},
+  type = 'material',
+  ...restProps
+}) => {
   if (type === 'material') {
     return (
-      <IconStyled {...restProps} className="material-icons" style={style}>
-        face
-      </IconStyled>
+      <IconStyled
+        {...restProps}
+        className={name}
+        aria-hidden="true"
+        style={style}
+      />
     );
   }
 
@@ -17,7 +24,7 @@ const Icon = ({ name, style, type, ...restProps }) => {
 Icon.propTypes = {
   name: string,
   style: any,
-  iconType: string,
+  type: string,
   restProps: any,
   type: string,
 };

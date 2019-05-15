@@ -32,16 +32,7 @@ class MapView extends Component {
             }}
             defaultCenter={{ lat: -30.3542805, lng: 153.0898535 }}
             defaultZoom={zoom}
-          >
-            <Icon
-              lat={-30.3542805}
-              lng={153.0898535}
-              text="Greg Luke"
-              name="place"
-              style={{ color: 'red', fontSize: 40 }}
-              type="material"
-            />
-          </GoogleMapReact>
+          />
         </div>
       </div>
     );
