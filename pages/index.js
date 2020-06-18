@@ -86,7 +86,9 @@ export default class Index extends React.Component {
         {/* // TODO Details button component */}
         <div className="mission">
           <p className="inner_content">
-            <span className="highlight">Our Mission –</span> <br />
+            <span className="highlight">Our Mission –</span> 
+{' '}
+<br />
             Medioptics is a family-friendly optometry practice based in Toormina
             and an agent for the Vision Australia Free Spectacle Program
             servicing from Woolgoolga to Nambucca. We offer same-day eye
@@ -138,7 +140,7 @@ export default class Index extends React.Component {
               Online!
             </h3>
             <div>We offer free delivery to your door!</div>
-            <a href="">Click Here Now</a>
+            <a href="">Click Here</a>
           </div>
           <img src="../static/home1_bg2.jpg" alt="woman and a man" />
         </section>
